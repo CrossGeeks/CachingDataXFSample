@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CachingDataSample.Views.MakeUpPage"
+             Title="MakeUps">
+    <StackLayout VerticalOptions="FillAndExpand">
+
+        <ActivityIndicator HorizontalOptions="Center"
+                           IsRunning="{Binding IsRunning}"
+                           Color="Gray"/>
+
+         <ListView ItemsSource="{Binding MakeUps}"
+                   RowHeight="100"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell ImageSource="{Binding Image_link}"
+                               Text="{Binding Name}"
+                               Detail="{Binding Description}"/> 
+                </DataTemplate>
+            </ListView.ItemTemplate>
+       </ListView>
+    </StackLayout>
+</ContentPage>
